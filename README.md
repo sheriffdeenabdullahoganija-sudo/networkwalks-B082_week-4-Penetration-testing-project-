@@ -107,18 +107,18 @@ First, I entered a username that I assumed was not registered.
 ```text
 Username: ABDUL
 Password: TEST123
-RESPONSE
+RESPONSE : Username not found
 
 
 
 I then tested another username using an incorrect password.
 
-Username: 
-Password: [INSERT PASSWORD]
+Username: admin
+Password: Incorrect password
 
 RESPONSE
 
-[INSERT ACTUAL RESPONSE]
+Incorrect password"
 
 The different responses showed that the application could reveal information about whether a username was valid.
 
@@ -399,9 +399,8 @@ The assessment demonstrated how weaknesses in authentication, SQL input handling
 
 The identified vulnerabilities have established remediation measures, and the Critical and High severity findings should be addressed immediately.
 
-Submitted by: [YOUR NAME]
+Submitted by: SHERIFFDEEN ABDULLAH OGANIJA
 Cybersecurity Mentor: Waqas Karim, CCIE
 Organisation: Networkwalks
 Batch: B082 | Week 4 Capstone Project
 
-This report was produced as part of a controlled educational exercise by Networkwalks. The target was authorized for security testing. These techniques must never be applied to any system without explicit written permission from the owner.
