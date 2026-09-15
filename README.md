@@ -113,7 +113,7 @@ RESPONSE
 
 I then tested another username using an incorrect password.
 
-Username: [INSERT USERNAME]
+Username: 
 Password: [INSERT PASSWORD]
 
 RESPONSE
