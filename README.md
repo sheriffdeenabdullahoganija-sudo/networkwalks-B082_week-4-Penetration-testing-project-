@@ -236,13 +236,19 @@ After recovering the passwords, I used them to open the corresponding PDF files 
 
 Evidence
 
-[INSERT SCREENSHOT: Networkwalks Hash Calculator showing PDF hash]
+ SCREENSHOT: Networkwalks Hash Calculator showing PDF hash
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d80fced4-6663-4771-8552-3f1e8fe93800" />
+
 
 [INSERT SCREENSHOT: Password Cracker showing recovered password]
 
-[INSERT SCREENSHOT: Password Cracker result for another PDF]
+ SCREENSHOT: Password Cracker result for another PDF
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d8bac8ac-7cf5-4094-a568-ea5f14e095bf" />
 
-[INSERT SCREENSHOT: Successfully opened PDF]
+
+INSERT SCREENSHOT: Successfully opened PDF
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/35da601c-b481-4991-9a78-f2f65f982f4d" />
+
 
 3.6 Finding 5 — Sensitive Metadata in Patient PDF Files
 
@@ -258,17 +264,21 @@ Steps Taken
 
 After recovering the password for the relevant PDF, I examined the document metadata using exiftool.
 
-exiftool [INSERT PDF FILE]
+exiftool exiftool report1_open.pdf
 Key Fields
-Author: [INSERT ACTUAL RESULT]
+Author: : j.malik
 
-Comments: [INSERT ACTUAL RESULT]
+
+Comments:  DB backup moved to /old before site migration, do not delete
+
 
 The metadata contained information that provided additional details about the internal environment.
 
 Evidence
 
-[INSERT SCREENSHOT: ExifTool output showing the metadata]
+SCREENSHOT: ExifTool output showing the metadata
+<img width="942" height="498" alt="image" src="https://github.com/user-attachments/assets/84e85239-214b-4e1b-aa5d-f02facbc4d5f" />
+
 
 3.7 Finding 6 — Forgotten Backup Folder with Directory Listing Enabled
 
@@ -290,7 +300,7 @@ https://medirozahospital.com/old/
 
 The directory listing displayed the available files.
 
-[INSERT ACTUAL BACKUP FILE NAME]
+[INSERT ACTUAL BACKUP FILE NAME] application/pdf
 
 The file was downloaded for the authorized assessment.
 
