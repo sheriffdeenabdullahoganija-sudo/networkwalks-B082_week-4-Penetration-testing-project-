@@ -104,39 +104,37 @@ I opened the patient portal login page and tested the login responses using diff
 
 First, I entered a username that I assumed was not registered.
 
-```text
-Username: ABDUL
-Password: TEST123
-RESPONSE : Username not found
 
-
+Username: ABDUL  
+Password: TEST123  
+**Response:** Username not found
 
 I then tested another username using an incorrect password.
 
-Username: admin
+Username: admin  
 Password: test123
 
-RESPONSE
-
-"Incorrect password"
+**Response:** Incorrect password
 
 The different responses showed that the application could reveal information about whether a username was valid.
 
-Evidence
+### Evidence
 
-Browser showing first login response
-<img width="960" height="540" alt="Screenshot 2026-09-15 190604" src="https://github.com/user-attachments/assets/043c51f8-ab02-45c8-9476-03f604a370d9" />
+**Browser showing first login response**
 
- Browser showing second login response
-<img width="960" height="540" alt="Screenshot 2026-09-15 190623" src="https://github.com/user-attachments/assets/4e249915-4f39-424f-a757-d741aeed5282" />
+![First login response](https://github.com/user-attachments/assets/043c51f8-ab02-45c8-9476-03f604a370d9)
 
-3.3 Finding 2 — SQL Injection Login Bypass
+**Browser showing second login response**
 
-Risk Rating: Critical
+![Second login response](https://github.com/user-attachments/assets/4e249915-4f39-424f-a757-d741aeed5282)
 
-Location: patient/login.php
+## 3.3 Finding 2 — SQL Injection Login Bypass
 
-Description
+**Risk Rating:** Critical
+
+**Location:** `patient/login.php`
+
+### Description
 
 SQL injection occurs when an application places user input directly into a database query without properly handling the input.
 
@@ -169,10 +167,12 @@ The result showed that the input affected the login query.
 Evidence
 
  Database error after SQL injection test
+ 
 <img width="467" height="385" alt="Screenshot 2026-09-10 185734" src="https://github.com/user-attachments/assets/53da0486-a661-4864-90c6-4c03405f10b8" />
 
 
  Logged-in patient portal after successful test
+ 
 <img width="949" height="438" alt="Screenshot 2026-09-15 191735" src="https://github.com/user-attachments/assets/82e37720-ae34-4b37-afd4-d4007d2639d4" />
 
 
@@ -201,10 +201,12 @@ I downloaded the three files for the authorized password-recovery and security a
 Evidence
 
  Patient portal showing the three PDF reports
+ 
 <img width="477" height="425" alt="Screenshot 2026-09-10 190128" src="https://github.com/user-attachments/assets/c5ddf98e-4bf6-4a9e-be26-65864cea81b4" />
 
 
  Downloaded PDF files
+ 
 <img width="918" height="191" alt="image" src="https://github.com/user-attachments/assets/cc2c8a9a-d14b-425a-a4dc-76389b6d4bf1" />
 
 3.5 Finding 4 — Weak PDF Passwords Crackable with a Wordlist
@@ -237,10 +239,13 @@ After recovering the passwords, I used them to open the corresponding PDF files 
 Evidence
 
  SCREENSHOT: Networkwalks Hash Calculator showing PDF hash
+ 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d80fced4-6663-4771-8552-3f1e8fe93800" />
 
 
-[INSERT SCREENSHOT: Password Cracker showing recovered password]
+SCREENSHOT: Password Cracker showing recovered password
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/853e6bf1-f3e6-492d-b802-f43fcb89a62e" />
+
 
  SCREENSHOT: Password Cracker result for another PDF
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d8bac8ac-7cf5-4094-a568-ea5f14e095bf" />
@@ -304,12 +309,18 @@ The directory listing displayed the available files.
 
 The file was downloaded for the authorized assessment.
 
-wget [INSERT AUTHORIZED FILE URL]
+wget https://medirozahospital.com/old/mediroza_db_backup_2019.sql
 Evidence
 
-[INSERT SCREENSHOT: Browser showing the /old/ directory]
+ SCREENSHOT: Browser showing the /old/ directory]
+ 
+<img width="480" height="443" alt="Screenshot 2026-09-15 213148" src="https://github.com/user-attachments/assets/2d934b0a-581d-49e6-9146-5959d5948b89" />
 
-[INSERT SCREENSHOT: Database backup file visible in the directory]
+SCREENSHOT: Database backup file visible in the directory
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/338aee35-dbe9-4b6d-865c-9a6dc4f0116f" />
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/5b127637-0815-4d61-a7c1-8c58984f5f3d" />
 
 3.8 Finding 7 — Confidential Staff Salaries and Shareholder Data in Plain Text
 
@@ -339,13 +350,8 @@ The shareholder information was also reviewed and presented using:
 Shareholder name
 Share percentage
 Share class
-Evidence
 
-[INSERT REDACTED SCREENSHOT: Staff salary table]
 
-[INSERT REDACTED SCREENSHOT: Shareholder table]
-
-Sensitive personal information should be redacted before publishing screenshots to GitHub.
 
 4. Full Attack Chain Summary
 
@@ -418,8 +424,13 @@ The assessment demonstrated how weaknesses in authentication, SQL input handling
 
 The identified vulnerabilities have established remediation measures, and the Critical and High severity findings should be addressed immediately.
 
-Submitted by: SHERIFFDEEN ABDULLAH OGANIJA
+Submitted by:
+
+SHERIFFDEEN ABDULLAH OGANIJA
+
 Cybersecurity Mentor: Waqas Karim, CCIE
+
 Organisation: Networkwalks
+
 Batch: B082 | Week 4 Capstone Project
 
