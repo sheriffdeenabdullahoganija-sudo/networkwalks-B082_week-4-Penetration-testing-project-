@@ -114,19 +114,21 @@ RESPONSE : Username not found
 I then tested another username using an incorrect password.
 
 Username: admin
-Password: Incorrect password
+Password: test123
 
 RESPONSE
 
-Incorrect password"
+"Incorrect password"
 
 The different responses showed that the application could reveal information about whether a username was valid.
 
 Evidence
 
-[INSERT SCREENSHOT: Browser showing first login response]
+Browser showing first login response
+<img width="960" height="540" alt="Screenshot 2026-09-15 190604" src="https://github.com/user-attachments/assets/043c51f8-ab02-45c8-9476-03f604a370d9" />
 
-[INSERT SCREENSHOT: Browser showing second login response]
+ Browser showing second login response
+<img width="960" height="540" alt="Screenshot 2026-09-15 190623" src="https://github.com/user-attachments/assets/4e249915-4f39-424f-a757-d741aeed5282" />
 
 3.3 Finding 2 — SQL Injection Login Bypass
 
@@ -144,31 +146,35 @@ Steps Taken
 
 I first tested the username field by entering a single quotation mark.
 
-Username: [INSERT TEST INPUT]
-Password: [INSERT TEST PASSWORD]
+Username: admin'
+Password: test123
 
 RESPONSE
+Warning: mysqli_query(): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''' at line 1
 
-[INSERT ACTUAL RESPONSE]
 
 The response was reviewed to determine whether the input affected the database query.
 
 I then performed the authorized SQL injection test used in the training exercise.
 
-Username: [INSERT ACTUAL TEST INPUT]
-Password: [INSERT PASSWORD]
+Username: admin --
+Password: test123
 
 RESPONSE
 
-[INSERT ACTUAL RESPONSE]
+sucessful login
 
 The result showed that the input affected the login query.
 
 Evidence
 
-[INSERT SCREENSHOT: Database error after SQL injection test]
+ Database error after SQL injection test
+<img width="467" height="385" alt="Screenshot 2026-09-10 185734" src="https://github.com/user-attachments/assets/53da0486-a661-4864-90c6-4c03405f10b8" />
 
-[INSERT SCREENSHOT: Logged-in patient portal after successful test]
+
+ Logged-in patient portal after successful test
+<img width="949" height="438" alt="Screenshot 2026-09-15 191735" src="https://github.com/user-attachments/assets/82e37720-ae34-4b37-afd4-d4007d2639d4" />
+
 
 3.4 Finding 3 — Confidential PDFs Accessible After Login Bypass
 
@@ -194,9 +200,12 @@ I downloaded the three files for the authorized password-recovery and security a
 
 Evidence
 
-[INSERT SCREENSHOT: Patient portal showing the three PDF reports]
+ Patient portal showing the three PDF reports
+<img width="477" height="425" alt="Screenshot 2026-09-10 190128" src="https://github.com/user-attachments/assets/c5ddf98e-4bf6-4a9e-be26-65864cea81b4" />
 
-[INSERT SCREENSHOT: Downloaded PDF files]
+
+ Downloaded PDF files
+<img width="918" height="191" alt="image" src="https://github.com/user-attachments/assets/cc2c8a9a-d14b-425a-a4dc-76389b6d4bf1" />
 
 3.5 Finding 4 — Weak PDF Passwords Crackable with a Wordlist
 
@@ -217,11 +226,11 @@ The extracted hashes were then submitted to the Networkwalks Password Cracker.
 The password-recovery process was performed against the authorized training files.
 
 Results
-patient_report_1.pdf → [INSERT RECOVERED PASSWORD]
+patient_report_1.pdf → 123456
 
-patient_report_2.pdf → [INSERT RECOVERED PASSWORD]
+patient_report_2.pdf → password
 
-patient_report_3.pdf → [INSERT RECOVERED PASSWORD]
+patient_report_3.pdf → !@#$%^&
 
 After recovering the passwords, I used them to open the corresponding PDF files and verify the results.
 
